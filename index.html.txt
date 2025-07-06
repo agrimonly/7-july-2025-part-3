@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Make a Wish</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffe0f5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow-x: hidden;
+      padding: 40px 20px 120px;
+      position: relative;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #d63384;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ffbde6;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #5c005c;
+      text-align: center;
+      max-width: 700px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .wish-btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .wish-btn:hover {
+      background-color: #ff3399;
+      box-shadow: 0 7px 20px rgba(255, 20, 147, 0.5);
+    }
+
+    .image-container {
+      margin-top: 50px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .image-container img {
+      max-width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .caption {
+      font-size: 1.2rem;
+      color: #d63384;
+      font-weight: 600;
+      margin-bottom: -10px;
+      text-align: center;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: sparkleAnim 2s infinite ease-in-out;
+    }
+
+    @keyframes sparkleAnim {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+    }
+
+    .typewriter {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: #c2185b;
+      font-weight: bold;
+      border-right: 2px solid #c2185b;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 10s steps(80, end) forwards, blink 0.75s step-end infinite;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 30px;
+      max-width: 90vw;
+      line-height: 1.8;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #c2185b; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Close Your Eyes and Make a Wish ?</h2>
+  <p>
+    The rules are simple: You just have to close your eyes and make a wish,<br>
+    but don't wish for a dairy milk fruit and nut!
+  </p>
+  <button class="wish-btn" onclick="lockWish()">Wish Locked!</button>
+
+  <div class="image-container" id="wishImages">
+    <div>
+      <p class="caption">That's what you wished for, right?<br>Thanks mat kehna, itna gift toh de sakta hoon.</p>
+      <img src="dairy milk fruit and nut.webp" alt="Dairy Milk Fruit & Nut">
+    </div>
+    <img src="amul-fruit-and-nut.jpeg" alt="Amul Fruit & Nut" id="secondImage" style="display:none;">
+
+    <div id="finalMessage" class="typewriter" style="display:none;">
+      May your wish come true...<br>
+      Aur tujhe har khushi mile jo tu deserve karti hai.<br>
+      Paisa bhi mile, par pyaar usse bhi zyada,<br>
+      Taaki main tere paiso pe aish bhi kar sakun,<br>
+      Aur tere dil mein humesha reh sakun.<br><br>
+      <strong>
+        Happy Birthday,<br>
+        meri jaaaaaaan,<br>
+        meri duniyaaaaaaa,<br>
+        meri apsaraaaaaaa,<br>
+        mera sab kuch.<br>
+        I loveeeeee youuuuuu shoooooo muchhhhhhhhhhhhh.
+      </strong>
+    </div>
+  </div>
+
+  <script>
+    function lockWish() {
+      alert("Wish Locked!\nWait for 5 seconds...");
+      document.getElementById("wishImages").style.display = "flex";
+
+      setTimeout(() => {
+        document.getElementById("secondImage").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("finalMessage").style.display = "block";
+        }, 1000);
+      }, 5000);
+    }
+
+    // Sparkle animation
+    for (let i = 0; i < 40; i++) {
+      let star = document.createElement("div");
+      star.className = "sparkle";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      star.style.animationDuration = 1.5 + Math.random() * 1.5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
