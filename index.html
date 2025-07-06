@@ -84,7 +84,6 @@
       text-align: center;
     }
 
-    /* Sparkles */
     .sparkle {
       position: absolute;
       width: 4px;
@@ -100,7 +99,6 @@
       100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
     }
 
-    /* Typewriter effect */
     .typewriter {
       display: inline-block;
       font-size: 1.2rem;
@@ -130,38 +128,40 @@
 </head>
 <body>
 
-  <h2>Close Your Eyes and Make a Wish ?</h2>
+  <h2>Close Your Eyes and Make a Wish ✨</h2>
   <p>
     The rules are simple: You just have to close your eyes and make a wish,<br>
-    but don't wish for a dairy milk fruit and nut ????
+    but don't wish for a dairy milk fruit and nut!
   </p>
-  <button class="wish-btn" onclick="lockWish()">Wish Locked ??</button>
+  <button class="wish-btn" onclick="lockWish()">Wish Locked!</button>
 
   <div class="image-container" id="wishImages">
     <div>
-      <p class="caption">That's what you wished for, right?<br>Thanks mt kehna, itna gift toh de skta hoon ??</p>
+      <p class="caption">That's what you wished for, right?<br>Thanks mat kehna, itna gift toh de sakta hoon.</p>
       <img src="dairy milk fruit and nut.webp" alt="Dairy Milk Fruit & Nut">
     </div>
     <img src="amul-fruit-and-nut.jpeg" alt="Amul Fruit & Nut" id="secondImage" style="display:none;">
 
     <div id="finalMessage" class="typewriter" style="display:none;">
       May your wish come true...<br>
-      Aur tujhe har khushi mile jo tu deserve karti hai<br>
-      Paisa bhi mile, par pyaar usse bhi zyada<br>
-      Taaaki main tere paiso pe aish bhi kar sakun  <br>
-      Aur tere dil mein humesha reh sakun <br>
-      <strong>Happy Birthday, 
-              meri jaaaaaaan 
-              meri duniyaaaaaaa
-        meri apsaraaaaaaa
-        mera sab kuch 
-      I loveeeeee youuuuuu shoooooo muchhhhhhhhhhhhh</strong>
+      Aur tujhe har khushi mile jo tu deserve karti hai.<br>
+      Paisa bhi mile, par pyaar usse bhi zyada,<br>
+      Taaki main tere paiso pe aish bhi kar sakun,<br>
+      Aur tere dil mein humesha reh sakun.<br><br>
+      <strong>
+        Happy Birthday,<br>
+        meri jaaaaaaan,<br>
+        meri duniyaaaaaaa,<br>
+        meri apsaraaaaaaa,<br>
+        mera sab kuch.<br>
+        I loveeeeee youuuuuu shoooooo muchhhhhhhhhhhhh.
+      </strong>
     </div>
   </div>
 
   <script>
     function lockWish() {
-      alert("Wish Locked ??\nWait for 5 seconds...");
+      alert("Wish Locked!\nWait for 5 seconds...");
       document.getElementById("wishImages").style.display = "flex";
 
       setTimeout(() => {
